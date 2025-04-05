@@ -1,3 +1,7 @@
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
+packages:
+  - 'automd'
+  - 'untyped'
+  - 'jiti'

@@ -16,26 +16,25 @@
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
-    "dev": "vitest dev",
-    "lint": "eslint . && prettier -c .",
-    "lint:fix": "automd && eslint . --fix && prettier -w .",
-    "prepack": "pnpm build",
-    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
-    "test": "pnpm lint && pnpm test:types && vitest run --coverage",
-    "test:types": "tsc --noEmit --skipLibCheck"
+    "test": "jiti ./automd/src/cli.ts",
+    "dev": "jiti ./src/index.ts"
   },
   "devDependencies": {
     "@types/node": "^22.13.13",
     "@vitest/coverage-v8": "^3.0.9",
-    "automd": "^0.4.0",
+    "automd": "workspace:*",
     "changelogen": "^0.6.1",
     "eslint": "^9.23.0",
     "eslint-config-unjs": "^0.4.2",
+    "jiti": "^2.4.2",
     "prettier": "^3.5.3",
     "typescript": "^5.8.2",
     "unbuild": "^3.5.0",
     "vitest": "^3.0.9"
   },
-  "packageManager": "pnpm@10.7.0"
+  "packageManager": "pnpm@10.7.0",
+  "dependencies": {
+    "defu": "^6.1.4",
+    "untyped": "^2.0.0"
+  }
 }
